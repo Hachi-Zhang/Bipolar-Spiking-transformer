@@ -1,0 +1,4 @@
+torch>=2.0
+mmengine>=0.7,<1.0
+mmcv>=2.0,<2.2
+mmsegmentation>=1.1,<1.3

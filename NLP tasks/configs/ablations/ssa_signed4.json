@@ -1,0 +1,1 @@
+{"attention_mode":"ssa","attention_max_value":16,"time_steps":4,"temporal_mode":"network","temporal_readout":"mean","use_history":false}

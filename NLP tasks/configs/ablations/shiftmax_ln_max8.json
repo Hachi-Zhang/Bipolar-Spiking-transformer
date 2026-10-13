@@ -1,0 +1,1 @@
+{"attention_mode":"shiftmax_ln","attention_max_value":8,"time_steps":4,"temporal_mode":"network","temporal_readout":"mean","use_history":false}

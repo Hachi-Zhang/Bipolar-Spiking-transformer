@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spikebert"
+version = "0.1.0"
+description = "SpikeBERT with softmax, signed SSA, and ShiftMax attention"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "torch>=2.0",
+  "transformers>=4.29,<5",
+  "accelerate>=0.21,<2",
+  "datasets>=2.14,<5",
+  "numpy>=1.24,<3",
+  "scipy>=1.10,<2",
+  "scikit-learn>=1.2,<2",
+  "tqdm>=4.65,<5",
+  "safetensors>=0.4",
+]
+
+[project.optional-dependencies]
+train = ["evaluate>=0.4,<1", "wandb>=0.15,<1", "tensorboard>=2.14,<3"]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
