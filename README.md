@@ -26,15 +26,15 @@ BSA addresses three limitations of spiking self-attention (SSA) through Shift-Dy
 
 ## Code map
 
-| Task | Main code | Implementation |
-| --- | --- | --- |
-| Image classification: SDT-V3 | [models.py](Image%20Classification/SDT-V3/models.py), [shift_dyt.py](Image%20Classification/SDT-V3/shift_dyt.py), [main_finetune.py](Image%20Classification/SDT-V3/main_finetune.py) | Signed attention, base-2 attention weighting, and a scheduled switch from LayerNorm to Shift-DyT for Q/K/V. |
-| Image classification: QKFormer | [qkformer.py](Image%20Classification/QKformer/qkformer.py), [shift_dyt.py](Image%20Classification/QKformer/shift_dyt.py), [train.py](Image%20Classification/QKformer/train.py) | Ternary Q/K, base-2 attention weighting, and Shift-DyT fine-tuning from a LayerNorm checkpoint. |
-| Image classification: Spikingformer | [model.py](Image%20Classification/Spikingformer/model.py), [shift_dyt.py](Image%20Classification/Spikingformer/shift_dyt.py), [train.py](Image%20Classification/Spikingformer/train.py) | Ternary Q/K, base-2 attention weighting, and Shift-DyT fine-tuning from a LayerNorm checkpoint. |
-| Semantic segmentation | [attention.py](Semantic%20Segmentation/efsdt_seg/models/attention.py), [sdtv3.py](Semantic%20Segmentation/efsdt_seg/models/sdtv3.py), [guide](Semantic%20Segmentation/README.md) | An MMSegmentation plugin for ADE20K, with signed SSA and configurable ShiftMax variants. |
-| NLP tasks | [modeling_spikebert.py](NLP%20tasks/src/spikebert/modeling_spikebert.py), [normalization.py](NLP%20tasks/src/spikebert/normalization.py), [guide](NLP%20tasks/README.md) | SpikeBERT attention and normalization ablations, MLM/NSP pretraining, and GLUE fine-tuning. |
-| Long-sequence visual classification | [configurations](Long-sequence%20visual%20classification/configs), [guide](Long-sequence%20visual%20classification/README.md) | Model implementations, training and evaluation code, and task-specific configurations for seq-CIFAR. |
-| Event-based tracking | [SDTrack.py](Event-based%20Tracking/SDTrack/lib/models/SDTrack/SDTrack.py), [SDTrack_shuai.py](Event-based%20Tracking/SDTrack/lib/models/SDTrack/SDTrack_shuai.py), [guide](Event-based%20Tracking/SDTrack/readme.md) | SDTrack-based experiments on FE108, VisEvent, and FELT, with dataset setup and training/testing scripts. |
+| Task | Implementation |
+| --- | --- |
+| Image classification: SDT-V3 | Signed attention, base-2 attention weighting, and a scheduled switch from LayerNorm to Shift-DyT for Q/K/V. |
+| Image classification: QKFormer | Ternary Q/K, base-2 attention weighting, and Shift-DyT fine-tuning from a LayerNorm checkpoint. |
+| Image classification: Spikingformer | Ternary Q/K, base-2 attention weighting, and Shift-DyT fine-tuning from a LayerNorm checkpoint. |
+| Semantic segmentation | An MMSegmentation plugin for ADE20K, with signed SSA and configurable ShiftMax variants. |
+| NLP tasks | SpikeBERT attention and normalization ablations, MLM/NSP pretraining, and GLUE fine-tuning. |
+| Long-sequence visual classification | Model implementations, training and evaluation code, and task-specific configurations for seq-CIFAR. |
+| Event-based tracking | SDTrack-based experiments on FE108, VisEvent, and FELT, with dataset setup and training/testing scripts. |
 
 The task directories are independent implementations. The BSA components enabled by default depend on the task configuration. Consult the corresponding guides for dependencies, datasets, configurations, and evaluation details.
 
@@ -42,13 +42,13 @@ The task directories are independent implementations. The BSA components enabled
 
 The image classification, semantic segmentation, and event-based tracking implementations build on the following open-source models and frameworks, with BSA integrated into the corresponding task code.
 
-| Task | Base model or framework | Upstream repository |
-| --- | --- | --- |
-| Image classification: SDT-V3 | Spike-Driven Transformer V3 | [BICLab/Spike-Driven-Transformer-V3](https://github.com/BICLab/Spike-Driven-Transformer-V3) |
-| Image classification: QKFormer | QKFormer | [zhouchenlin2096/QKFormer](https://github.com/zhouchenlin2096/QKFormer) |
-| Image classification: Spikingformer | Spikingformer | [TheBrainLab/Spikingformer](https://github.com/TheBrainLab/Spikingformer) |
-| Semantic segmentation | SDT-V3 and MMSegmentation | [SDT-V3](https://github.com/BICLab/Spike-Driven-Transformer-V3), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation) |
-| Event-based tracking | SDTrack | [YmShan/SDTrack](https://github.com/YmShan/SDTrack) |
+| Task | Base model or framework |
+| --- | --- |
+| Image classification: SDT-V3 | Spike-Driven Transformer V3 |
+| Image classification: QKFormer | QKFormer |
+| Image classification: Spikingformer | Spikingformer |
+| Semantic segmentation | SDT-V3 and MMSegmentation |
+| Event-based tracking | SDTrack |
 
 We thank the authors of these projects for their open-source implementations. Please also cite the corresponding original papers when using their code.
 
