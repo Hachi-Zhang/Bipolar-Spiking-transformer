@@ -42,13 +42,13 @@ The task directories are independent implementations. The BSA components enabled
 
 The image classification, semantic segmentation, and event-based tracking implementations build on the following open-source models and frameworks, with BSA integrated into the corresponding task code.
 
-| Task | Base model or framework |
-| --- | --- |
-| Image classification: SDT-V3 | Spike-Driven Transformer V3 |
-| Image classification: QKFormer | QKFormer |
-| Image classification: Spikingformer | Spikingformer |
-| Semantic segmentation | SDT-V3 and MMSegmentation |
-| Event-based tracking | SDTrack |
+| Task | Base model or framework | Upstream repository |
+| --- | --- | --- |
+| Image classification: SDT-V3 | Spike-Driven Transformer V3 | [BICLab/Spike-Driven-Transformer-V3](https://github.com/BICLab/Spike-Driven-Transformer-V3) |
+| Image classification: QKFormer | QKFormer | [zhouchenlin2096/QKFormer](https://github.com/zhouchenlin2096/QKFormer) |
+| Image classification: Spikingformer | Spikingformer | [TheBrainLab/Spikingformer](https://github.com/TheBrainLab/Spikingformer) |
+| Semantic segmentation | SDT-V3 and MMSegmentation | [SDT-V3](https://github.com/BICLab/Spike-Driven-Transformer-V3), [MMSegmentation](https://github.com/open-mmlab/mmsegmentation) |
+| Event-based tracking | SDTrack | [YmShan/SDTrack](https://github.com/YmShan/SDTrack) |
 
 We thank the authors of these projects for their open-source implementations. Please also cite the corresponding original papers when using their code.
 
